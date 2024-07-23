@@ -279,7 +279,6 @@ void signalrgb_mode_enable(void)
     rgb_matrix_mode_noeeprom(RGB_MATRIX_NONE); //Set RGB Matrix to none to allow a re-init.
     rgb_matrix_disable_noeeprom();
     rgb_matrix_enable_noeeprom();
-    set_all_side_off();
     rgb_matrix_mode_noeeprom(RGB_MATRIX_SIGNALRGB); //Set RGB Matrix to SignalRGB Compatible Mode
     #endif
 }
