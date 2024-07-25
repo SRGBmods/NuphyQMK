@@ -43,21 +43,21 @@ void nuglow_raw_hid_receive(uint8_t *data, uint8_t length) {
     switch (*command_id) {
         case id_signalrgb_stream_leds: 
         {
-            is_side_rgb_off();
+            is_side_rgb_off(true);
             led_streaming(data);
             break;
         }
 
         case id_signalrgb_effect_enable: 
         {
-            is_side_rgb_off();
+            is_side_rgb_off(true);
             signalrgb_mode_enable();
             break;
         }
 
         case id_signalrgb_effect_disable: 
         {
-            is_side_rgb_off();
+            is_side_rgb_off(true);
             signalrgb_mode_disable();
             break;
         }
