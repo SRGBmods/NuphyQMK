@@ -36,34 +36,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define SIDE_COLOUR_MAX  8 
 #define LIGHT_SPEED_MAX  4
 
-void nuglow_raw_hid_receive(uint8_t *data, uint8_t length) {
-    uint8_t *command_id   = &(data[0]);
-    uint8_t *command_data = &(data[1]);
-
-    switch (*command_id) {
-        case id_signalrgb_stream_leds: 
-        {
-            is_side_rgb_off(true);
-            led_streaming(data);
-            break;
-        }
-
-        case id_signalrgb_effect_enable: 
-        {
-            is_side_rgb_off(true);
-            signalrgb_mode_enable();
-            break;
-        }
-
-        case id_signalrgb_effect_disable: 
-        {
-            is_side_rgb_off(true);
-            signalrgb_mode_disable();
-            break;
-        }
-    }
-}
-
 const uint8_t side_speed_table[5][5] = {
     [SIDE_WAVE]   = {6,  14, 20, 25,  40},
     [SIDE_MIX]    = {10,  20, 25, 30,  45},
